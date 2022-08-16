@@ -13,8 +13,13 @@ public class BasicNavigations {
         //3-go to tesla.com
         driver.get("https://www.tesla.com");//without https it cannot,invalid argument
 
+        System.out.println("driver.getCurrentUrl()= " + driver.getCurrentUrl());
+  //driver.getCurrentUrl()= https://www.tesla.com/
+        System.out.println("driver.getTitle()= " + driver.getTitle());
+//driver.getTitle()= Electric Cars, Solar & Clean Energy | Tesla
+
         //stop code execution for 3 seconds
-      //  Thread.sleep(3000);
+    //Thread.sleep(3000);
         //use selenium navigate back
         driver.navigate().back();
         //  Thread.sleep(3000);
@@ -31,7 +36,9 @@ public class BasicNavigations {
 //driver.getTitle()= Google
 
         String currentTitle = driver.getTitle();
-        System.out.println("currentTitle = " + currentTitle);//Google
-        //
+        System.out.println("currentTitle = " + currentTitle);//currentTitle = Google
+
+        System.out.println("driver.getCurrentUrl()= " + driver.getCurrentUrl());
+//driver.getCurrentUrl()= https://www.google.com/
     }
 }
