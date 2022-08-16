@@ -5,11 +5,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BasicNavigations {
-    public static void main(String[] args) {
-        //1-setup browser driver
+    public static void main(String[] args) throws InterruptedException{
+        //1-setup browser driver          //throws InterruptedException{ for  Thread.sleep(3000);  we wrote
         WebDriverManager.chromedriver().setup();
         //2-create instance of the selenium webdriver
         WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();//this is making full screen
+//driver.manage().window().fullscreen(); for MAC users
         //3-go to tesla.com
         driver.get("https://www.tesla.com");//without https it cannot,invalid argument
 
@@ -19,13 +21,13 @@ public class BasicNavigations {
 //driver.getTitle()= Electric Cars, Solar & Clean Energy | Tesla
 
         //stop code execution for 3 seconds
-    //Thread.sleep(3000);
+        Thread.sleep(3000);
         //use selenium navigate back
         driver.navigate().back();
-        //  Thread.sleep(3000);
+        Thread.sleep(3000);
         driver.navigate().forward();//use selenium navigate forward
         
-        //  Thread.sleep(3000);
+         Thread.sleep(3000);//wait 3 second
         driver.navigate().refresh();//use selenium navigate refresh
 
         //use navigate().to()
@@ -40,5 +42,12 @@ public class BasicNavigations {
 
         System.out.println("driver.getCurrentUrl()= " + driver.getCurrentUrl());
 //driver.getCurrentUrl()= https://www.google.com/
+
+        //this will close the currently opened window
+            driver.close();
+
+        //this will close all of the  opened window//
+     //   driver.quit();
+
     }
 }
