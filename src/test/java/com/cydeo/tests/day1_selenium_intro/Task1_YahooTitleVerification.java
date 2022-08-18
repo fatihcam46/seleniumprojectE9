@@ -1,6 +1,7 @@
 package com.cydeo.tests.day1_selenium_intro;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -20,7 +21,7 @@ public class Task1_YahooTitleVerification {
 
         //2. Go to https://www.yahoo.com
         driver.get("https://www.yahoo.com");
-
+        driver.findElement(By.name("agree")).click();
         //3. Verify title:
         //Expected: Yahoo | Mail, Weather, Search, Politics, News, Finance, Sports & Videos
         String expectedTitle = "Yahoo is part of the Yahoo family of brands.";
