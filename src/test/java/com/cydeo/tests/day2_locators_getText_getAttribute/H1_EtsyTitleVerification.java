@@ -14,23 +14,25 @@ public class H1_EtsyTitleVerification {
         //2. Go to https://www.etsy.com
         //3. Search for “wooden spoon”
         //4. Verify title:        //Expected: “Wooden spoon | Etsy”
-        //1- Open a chrome browser
+        //1- Open a Chrome browser
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
         //2. Go to https://www.etsy.com
         driver.get("https://www.etsy.com");
-      //  driver.findElement(By.name("agree")).click();
-       WebElement accept = driver.findElement(By.className("wt-overlay__footer__action"));
-       accept.click();
-
+       //driver.findElement(By.className("wt-btn wt-btn--filled wt-mb-xs-0")).click();
+        
+//     WebElement accept = driver.findElement(By.className("wt-btn wt-btn--filled wt-mb-xs-0"));
+ // accept.click();  it did not work. i used cssSelector
+        WebElement acceptInButton = driver.findElement(By.cssSelector("button[class='wt-btn wt-btn--filled wt-mb-xs-0']"));
+        acceptInButton.click();
         //3. Search for “wooden spoon”
-        WebElement etsySearchBox = driver.findElement(By.name("q"));
+        WebElement etsySearchBox = driver.findElement(By.name("search_query"));
         etsySearchBox.sendKeys("wooden spoon" + Keys.ENTER);
 
         //4. Verify title:        //Expected: “Wooden spoon | Etsy”
-        String expectedInTitle = "Wooden spoon | Etsy";
+        String expectedInTitle = "Wooden spoon - Etsy UK";
         String actualTitle = driver.getTitle();
 
         if (actualTitle.startsWith(expectedInTitle)){
