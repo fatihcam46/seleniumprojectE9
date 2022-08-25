@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class H3_PracticeCydeoClassLocator {
+public class H4_PracticeCydeoClassLocator {
     public static void main(String[] args) {
         //TC #4: Practice Cydeo – Class locator practice
         //1- Open a chrome browser

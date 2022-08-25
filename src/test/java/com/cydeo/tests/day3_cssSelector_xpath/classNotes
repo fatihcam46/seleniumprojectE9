@@ -217,7 +217,6 @@ EXAMPLE#3: ex: <a href="https://tesla.com" name="uh68" class="ff58" id="bb22"> T
     tagName#idValue --> a#bb22
 
 -----------------------------------------------------------------------------
-
 - XPATH LOCATORS
     - xpath is one of 8 locators of Selenium
     - xpath allows us to create custom locators using provided attributes and their values
@@ -225,8 +224,7 @@ EXAMPLE#3: ex: <a href="https://tesla.com" name="uh68" class="ff58" id="bb22"> T
 
     - XPATH has 2 different types
 
-Interview question: What is the difference between absolute xpath and relative xpath?
-
+?? Interview question: What is the difference between absolute xpath and relative xpath?
 #1- ABSOLUTE XPATH:
     - Absolute xpath starts with single slash "/"
     - It starts looking in html from the root/parent element : html element
@@ -246,18 +244,13 @@ Interview question: What is the difference between absolute xpath and relative x
 
 --> MAIN SYNTAX: //tagName[@attribute='value']
 
-
 ex: <a href="https://tesla.com" name="uh68" class="ff58" id="bb22"> TESLA CYBERTRUCK </a>
-
-
 -->             //tagName[@attribute='value']
-
 - locate above <a> tag using relative xpath locator with different attributes.
 
     - using name attribute         : //a[@name='uh68']
     - using class attribute     : //a[@class='ff58']
     - using id attribute         : //a[@id='bb22']
-
 
 COMMONLY USED XPATH SYNTAXES:
 
@@ -266,25 +259,20 @@ COMMONLY USED XPATH SYNTAXES:
 #3- //tagName[.='text']  same as //tagName[text()='text']
 #4- //*[@attribute='value']
 
-
 EXPLANATIONS:
 #1- //tagName[@attribute='value']
-
     We are saying, get me the given tag with provided attribute and value
 
 #2- //tagName[contains(@attribute, 'value')]
-
     We are saying, get me the given tag that has the attribute which contains the value in the locator
-
     Looks for the tagName that has matching or containing attribute value
 
 #3- //tagName[.='text']
-
     This locator will return the web element with given text
 
 #4- //*[@attribute='value']
-
-    We are saying, we do not care about which tagName, return us the web element with matching attribute and value result
+    We are saying, we do not care about which tagName, return us the web element with
+    matching attribute and value result
 
 
  chro path'

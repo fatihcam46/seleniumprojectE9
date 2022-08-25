@@ -22,12 +22,12 @@ public class Task1_YahooTitleVerification {
         //2. Go to https://www.yahoo.com
         driver.get("https://www.yahoo.com");
         driver.findElement(By.name("agree")).click();
-        //3. Verify title:
-        //Expected: Yahoo | Mail, Weather, Search, Politics, News, Finance, Sports & Videos
-        String expectedTitle = "Yahoo is part of the Yahoo family of brands.";
+        //3. Verify title: Expected: Yahoo | Mail, Weather, Search, Politics, News, Finance, Sports & Videos
+        String expectedTitle = "Yahoo UK | News, email and search";
 
         //actual title comes from the browser
         String actualTitle = driver.getTitle();
+        System.out.println("actualTitle = " + actualTitle);
 
         if (actualTitle.equals(expectedTitle)){
             System.out.println("Title is as expected. Verification PASSED!");

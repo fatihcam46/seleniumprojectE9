@@ -1,7 +1,9 @@
 package com.cydeo.tests.day2_locators_getText_getAttribute;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class H2_ZeroBankHeaderVerification {
@@ -20,14 +22,16 @@ public class H2_ZeroBankHeaderVerification {
 
         //3. Verify header text    //Expected: “Log in to ZeroBank”
 
-        String actualHeader = driver.getTitle();
-        System.out.println("actualHeader = " + actualHeader);
-        String expectedHeader = "Log in to ZeroBank";
-        
-        if (actualHeader.equals(expectedHeader)){
-            System.out.println("Header verification PASSED!");
+        WebElement headerText = driver.findElement(By.tagName("h3"));
+        String expectedHeaderText = "Log in to ZeroBank";
+        String actualHeaderText = headerText.getText();
+
+        if(expectedHeaderText.equals(actualHeaderText)){
+
+            System.out.println("Verification PASSED!");
         }else{
-            System.out.println("Header verification FAILED!!!");
+            System.out.println("Verification FAILED!!!");
         }
+
     }
 }
