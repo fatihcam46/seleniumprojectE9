@@ -30,7 +30,7 @@ public class T4_SimpleDropdowns {
 
         //3. Verify “Simple dropdown” default selected value is correct
         Select simpleDropdown = new Select(driver.findElement(By.xpath("//select[@id='dropdown']")));
-                                            //Select(write here>>driver>>findElement>>xPath>>id(right click>>inspect>>copy>>)
+                      //Select(write here>>driver>>findElement>>xPath>>id(right click>>inspect>>copy>>)
         WebElement currentlySelectedOption = simpleDropdown.getFirstSelectedOption();
 //3-getFirstSelectedOption();
         String actualSimpleDropdownText = currentlySelectedOption.getText();
