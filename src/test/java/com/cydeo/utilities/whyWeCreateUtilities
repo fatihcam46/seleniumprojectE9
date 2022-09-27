@@ -1,0 +1,16 @@
+- The reason we have created different packages, and different utility classes, different type of file (.properties) are
+    - re-usability
+    - to organize our code
+    - less code
+    - efficient
+    - easy to maintain
+    - to centralize
+    - avoid hard coding
+
+
+#1- configuration.properties : to centralize and avoid hard coding some of the important test data
+#2- TestBase: we can centralize and re-use setup/teardown methods, some important variables and objects etc.
+#3- ConfigurationReader : to be able to repeatedly and easily read from our configuration.properties file
+#4- Driver : to be able to instantiate our object in less line of code and also be able to steadily pass the same driver instance around in our project
+#5- BrowserUtils : to centralize and easy to re-use some of the general utility methods
+    - utility methods that are not specific to one page and can be applied in different pages

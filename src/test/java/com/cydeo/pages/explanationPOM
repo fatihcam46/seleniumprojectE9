@@ -1,0 +1,39 @@
+Page Object Model Design Pattern (POM)
+
+#1- WHAT IS Page Object Model Design Pattern?
+
+    - Creating java class for each page of the web application.
+    - All of the related web elements to current page will be stored to its own .java class.
+    - We can also store related re-usable utility methods in its "page" class as well.
+- We have centralized pretty much everything re-usable such as:
+    - important test data: in our configuration.properties
+    - utility methods in utilities packages under different classes
+        - Driver
+        - ConfigurationReader
+        - BrowserUtils
+- The only thing that we didn't centralize or create a structure around is LOCATING WEB ELEMENTS.
+- PAGE OBJECT MODEL DESIGN PATTERN SOLVES THIS ISSUE WE CURRENTLY HAVE.
+--------------------------------------------------------------------------------
+
+- How are we going to implement POM Design Pattern?
+
+#1- Every time we create a java class for a new page of our application, we will initialize our driver instance and the object that class.
+
+    - PageFactory.initElements(driver, this);
+    - This method basically initializes the driver instance and the object of the class.
+    - After this line we will be able to use THE OBJECT of the class, to reach the avaiable web elements.
+
+#2- Instead of using .findElement method we will use @FindBy annotation
+
+
+regular email format :
+    sometext@domain.com
+    sometext@domain.gov
+    sometext@domain.edu
+
+- When we implement POM Design pattern we solve StaleElementReferenceException by default.
+
+- How it works?
+    - Every time we want to use WebElement located using @FindBy annotation, it will be re-located in the line we are using it.
+    - Basically it will automatically do a "fressness check" which will eliminate the StaleElementReferenceException
+
